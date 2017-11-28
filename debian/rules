@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+#export DH_VERBOSE=1
+export DH_GOLANG_EXCLUDES := collate/tools/colcmp cmd/gotext
+export DH_GOLANG_INSTALL_EXTRA := encoding/testdata
+
+%:
+	dh $@ --buildsystem=golang --with=golang
